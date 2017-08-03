@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/mirror/mirror_common.css" rel="stylesheet" type="text/css" />
+    <link href="css/mirror/deal.css" rel="stylesheet" type="text/css" />
+    <link href="css/one.css" rel="stylesheet" type="text/css" />
+<!--
+    <link href="css/index_style.css" rel="stylesheet" type="text/css">
+-->
+</head>
+<body class="mirror_bg  ">
+    <div class="two_img" style="line-height: 70px;padding: 0 6px; position:absolute;">
+        <img src="img/logo11.png" style="height: 50px;">
+        <img src="img/title.png" style="height: 60px;">
+    </div>
+    <div id="preview" style="position: absolute;right:10px;top:10px;" onmouseover="document.getElementById('btn-preview').style.visibility='visible';" onmouseout="document.getElementById('btn-preview').style.visibility='hidden';">
+        <button id="btn-preview" style="visibility: hidden">参观模式</button>
+    </div>
+    <div class="two_container">
+        <div class="two_content">
+            <div class="row-fluid two_row1">
+                <div class="col-md-3 two_col">
+                    <div class="box box1">
+                        <div class="b-title">用户激活</div>
+                        <div class="b-body" style="width:100%;height:100%;padding-bottom: 5%">
+                            <div id="user" style="width:100%;height:100%;"></div>
+                        </div>
+                        <i class="b-lt"></i>
+                        <i class="b-lb"></i>
+                        <i class="b-rt"></i>
+                        <i class="b-rb"></i>
+                    </div>
+                </div>
+                <div class="col-md-6 two_col">
+                    <div class="box box1">
+                        <div class="b-title">业务订购</div>
+                        <div class="b-body" style="width:100%;height:100%;">
+                            <div id="order" style="width:100%;height:100%;"></div>
+                        </div>
+                        <i class="b-lt"></i>
+                        <i class="b-lb"></i>
+                        <i class="b-rt"></i>
+                        <i class="b-rb"></i>
+                    </div>
+                </div>
+                <div class="col-md-3 two_col">
+                    <div class="box box1">
+                        <div class="b-title">业务点播</div>
+                        <div class="b-body" style="width:100%;height:100%;">
+                            <div id="play" style="width:100%;height:100%;"></div>
+                        </div>
+                        <i class="b-lt"></i>
+                        <i class="b-lb"></i>
+                        <i class="b-rt"></i>
+                        <i class="b-rb"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid two_row2">
+                <div class="col-md-12 two_col">
+                    <div class="box box1">
+                        <div class="b-title">业务认证</div>
+                        <div class="p-body" style="width:100%;height:100%;">
+                            <div id="rate" style="font-style:normal;font-size:12px;font-family:'sans-serif'; position: absolute;width:340px;height:15px;right:1%;top:23px;color:rgba(255,255,255,0.95);font-weight:normal;visibility: hidden;">
+                                <div id="rateblue" style="background-color:#00e4ff;width:26px;height: 15px;border-radius: 3px;float:left;display: inline-block"></div>
+                                <span style="margin-left: 5px;display: block;float:left; font-family: 'sans-serif';">失败率(<5%)</span>
+                                <div id="rateyellow" style="background-color:#efca45;width:26px;height: 15px;border-radius: 3px;float:left;display: inline-block;margin-left: 8px;"></div>
+                                <span style="margin-left: 3px;display: block;float:left; font-family: 'sans-serif';">失败率(5%-10%)</span>
+                                <div id="ratered" style="background-color:#ee1a19;width:26px;height: 15px;border-radius: 3px;float:left;display: inline-block;margin-left: 8px;"></div>
+                                <span style="margin-left: 3px;display: block;float:left; font-family: 'sans-serif';">失败率(>10%)</span>
+                            </div>
+                            <div id="relise" style="width:100%;height:100%;"></div>
+                        </div>
+                        <i class="b-lt"></i>
+                        <i class="b-lb"></i>
+                        <i class="b-rt"></i>
+                        <i class="b-rb"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid two_row3">
+                <div class="col-md-12 two_col">
+                    <div class="box box1" id="mess">
+                        <div class="b-title">实时监控</div>
+                        <table class="m-grid warningInfo">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>用户编号</th>
+                                    <th>注册时间</th>
+                                    <th>更新时间</th>
+                                    <th>用户状态</th>
+                                    <th>智能卡号</th>
+                                    <th>机顶盒号</th>
+                                    <th>认证结果</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="gridRoll" id="info-roll" style="height: 60%;">
+                            <div class="gridList" id="info-total">
+                                <table class="m-grid warningInfo">
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <i class="b-lt"></i>
+                        <i class="b-lb"></i>
+                        <i class="b-rt"></i>
+                        <i class="b-rb"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<!--
+    <script>
+      //宇宙特效
+      "use strict";
+      var canvas = document.getElementById('canvas'),
+          ctx = canvas.getContext('2d'),
+          w = canvas.width = window.innerWidth,
+          h = canvas.height = window.innerHeight,
+
+          hue = 217,
+          stars = [],
+          count = 0,
+          maxStars = 1300;//星星数量
+
+      var canvas2 = document.createElement('canvas'),
+          ctx2 = canvas2.getContext('2d');
+      canvas2.width = 100;
+      canvas2.height = 100;
+      var half = canvas2.width / 2,
+          gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+      gradient2.addColorStop(0.025, '#CCC');
+      gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+      gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+      gradient2.addColorStop(1, 'transparent');
+
+      ctx2.fillStyle = gradient2;
+      ctx2.beginPath();
+      ctx2.arc(half, half, half, 0, Math.PI * 2);
+      ctx2.fill();
+
+      // End cache
+
+      function random(min, max) {
+        if (arguments.length < 2) {
+          max = min;
+          min = 0;
+        }
+
+        if (min > max) {
+          var hold = max;
+          max = min;
+          min = hold;
+        }
+
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function maxOrbit(x, y) {
+        var max = Math.max(x, y),
+            diameter = Math.round(Math.sqrt(max * max + max * max));
+        return diameter / 2;
+        //星星移动范围，值越大范围越小，
+      }
+
+      var Star = function() {
+
+        this.orbitRadius = random(maxOrbit(w, h));
+        this.radius = random(60, this.orbitRadius) / 8;
+        //星星大小
+        this.orbitX = w / 2;
+        this.orbitY = h / 2;
+        this.timePassed = random(0, maxStars);
+        this.speed = random(this.orbitRadius) / 50000;
+        //星星移动速度
+        this.alpha = random(2, 10) / 10;
+
+        count++;
+        stars[count] = this;
+      }
+
+      Star.prototype.draw = function() {
+        var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+            y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+            twinkle = random(10);
+
+        if (twinkle === 1 && this.alpha > 0) {
+          this.alpha -= 0.05;
+        } else if (twinkle === 2 && this.alpha < 1) {
+          this.alpha += 0.05;
+        }
+
+        ctx.globalAlpha = this.alpha;
+        ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+        this.timePassed += this.speed;
+      }
+
+      for (var i = 0; i < maxStars; i++) {
+        new Star();
+      }
+
+      function animation() {
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.globalAlpha = 0.5; //尾巴
+        ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 2)';
+        ctx.fillRect(0, 0, w, h)
+
+        ctx.globalCompositeOperation = 'lighter';
+        for (var i = 1, l = stars.length; i < l; i++) {
+          stars[i].draw();
+        };
+
+        window.requestAnimationFrame(animation);
+      }
+
+      animation();
+    </script>
+-->
+    <script src="js/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="js/plugins/echarts2.0/echarts.sankey.js"></script>-->
+    <script src="js/plugins/echarts/echarts.min.js"></script>
+    <script src="js/plugins/d3/d3.v3.min.js"></script>
+    <script src="js/plugins/scrool/scrollNum.js"></script>
+    <script src="js/mirror/m-common.js"></script>
+    <!--<script src="js/config.js"></script>-->
+    <script src="js/data.js"></script>
+    <script src="js/mirror/play.js"></script>
+    <script src="js/mirror/order.js"></script>
+    <script src="js/mirror/user.js"></script>
+    <script src="js/mirror/relise.js"></script>
+    <script src="js/mirror/mess.js"></script>
+
+    <!--<script src="js/mirror/deal.js"></script>-->
+    <!--<script src="js/mirror/second.js"></script>-->
+    <!-- <script src="js/mirror/preview.js"></script> -->
+    <script src="js/mirror/total.js"></script>
+</body>
+
+</html>

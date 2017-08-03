@@ -1,0 +1,126 @@
+.menu {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.menu-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+}
+ .menu-item-bounce, .menu-item-button {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height:60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    color: #fff;
+     border: 2px solid #00e1fb;
+     background-color: transparent;
+    outline: none;
+    position: relative;
+     overflow: hidden;
+}
+
+.menu-item-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    overflow: hidden;
+}
+.menu-item-bounce:hover,
+.menu-item-button:hover{
+    box-shadow: 0 0 4px 2px #18799c;
+}
+.menu-item-button.active{
+    background-color: #00e1fb;
+    transition: all .2s;
+}
+.menu-toggle-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    color: #fff;
+    border: 2px solid #00d8ff;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px 2px #26c9ff;
+    /*background-color: #26c9ff;*/
+
+}
+.menu-toggle-button:hover{
+    color: #fff;
+}
+.menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.menu-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+.menu-item-bounce {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.menu-item-button span {
+    font-size: 1.2rem;
+    color: #fff;
+}
+.water-wrap{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    overflow:hidden;
+    background: #00e1fb;
+    opacity:1;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    outline: none;
+}
+.water-wave{
+    background-color: rgba(97, 97, 97, 0.8);
+    width:60px;
+    height:60px;
+    border-radius:35%;
+    position:absolute;
+    left:50%;
+    margin-left:-30px;
+    top:-35px;
+    opacity:.45;
+    z-index:10;
+}
+.toggle-text{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 99999;
+    width: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    text-align: center;
+}

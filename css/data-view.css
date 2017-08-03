@@ -1,0 +1,215 @@
+html{ font-size: 10px;}
+@media screen and (max-width: 1280px) {
+    html,body{ font-size: 10px;}
+}
+@media screen and (min-width: 1281px) and (max-width: 1440px){
+    html,body{ font-size: 11px;}
+}
+@media screen and (min-width: 1441px) and (max-width: 1680px){
+    html,body{ font-size: 13px;}
+}
+@media screen and  (min-width: 1681px){
+    html,body{ font-size: 13px;}
+}
+html,body{
+    height: 100%;
+}
+/*@font-face {
+    font-family: "TITLE";
+    src: url("../fonts/JZY.ttf") format("truetype");
+}*/
+/*common*/
+.no-margin{margin: 0}
+.mt14{margin-top: 14px}
+.mt18{margin-top: 18px}
+.no-padding{padding: 0}
+.c-red{color: #ff3232;}
+.c-orange{color: #f6bd10;}
+.c-yellow{color: #ffe032;}
+body{
+    background-color: #030614;
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*layout*/
+.header{
+    width: 100%;
+    height: 6.0rem;
+    padding: .5rem 1.5rem;
+}
+.header .logo{
+    display: inline-block;
+    height: 5rem;
+    line-height: 5rem;
+    vertical-align: top;
+}
+.header .title{
+    display: inline-block;
+    margin: 0;
+    padding-left: 2rem;
+    font-size: 2rem;
+    line-height: 5rem;
+    /*font-family: TITLE;*/
+    color: #fff;
+    text-shadow: 0 0 1rem rgba(31,66,151,1);
+}
+/*box*/
+.box{
+    background-color: rgba(0,23,48,.4);
+    -webkit-box-shadow:  0 0 2rem rgba(0,83,203,.4);
+    -moz-box-shadow:  0 0 2rem rgba(0,83,203,.4);
+    box-shadow:  0 0 2rem rgba(0,83,203,.4);
+}
+.box-heading{
+    width: 20rem;
+    height: 2.4rem;
+    margin: 0 auto;
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+    background: url("../img/box-title.png") no-repeat;
+    background-size: 100% 2.4rem;
+}
+.box-title{
+    height: 2.4rem;
+    margin: 0;
+    line-height: 2.4rem;
+    font-size: 1.2rem;
+    font-family: "Heiti TC";
+    color: #fff;
+    text-align: center;
+}
+.box-body{
+    padding: 1rem 1.6rem;
+}
+.box-inner{
+    background-color: rgba(0,39,77,.3);
+    -webkit-box-shadow: inset 0 0 2rem rgba(42,118,210,1);
+    -moz-box-shadow: inset 0 0 2rem rgba(42,118,210,1);
+    box-shadow: inset 0 0 2rem rgba(42,118,210,1);
+}
+.box-inner.warning{
+    -webkit-box-shadow: inset 0 0 2rem rgba(255,18,18,.7);
+    -moz-box-shadow: inset 0 0 2rem rgba(255,18,18,.7);
+    box-shadow: inset 0 0 2rem rgba(255,18,18,.7);
+}
+.box-inner-title{
+    padding-left: 2.0rem;
+    padding-top: 1.2rem;
+    color: #54a2f9;
+    font-size: 1.2rem;
+    font-family: "Heiti TC";
+}
+.box-inner-body{
+    padding: .8rem 1.0rem;
+}
+@media screen and (max-width: 1280px) {
+    .box-inner-title{
+        padding-top: .6rem;
+    }
+    .box-inner-body{
+        padding: .2rem 1rem;
+    }
+}
+/*grid*/
+.grid{
+    table-layout:fixed;
+    width: 100%;
+}
+.grid>thead>tr>th{
+    font-weight: bold;
+}
+.grid>tbody>tr>td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.grid>tbody>tr>td span{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.grid>tbody>tr>td .index{
+    display: inline-block;
+    font-style: normal;
+    font-family: Verdana;
+    color: #000;
+    background-color: #b5b5b6;
+    text-align: center;
+    width: 2.2rem!important;
+    font-size: 1.2rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    border-radius: .5rem;
+}
+.grid tbody .progress{
+    height: 1.4rem;
+    line-height: 1.4rem;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.grid .progress .progress-bar{
+    background-color: #00bbff;
+    text-align: left;
+}
+.grid .progress .progress-bar span{
+    padding-left: 1.0rem;
+    color: #fff!important;
+    font-size: 1.2rem;
+}
+.grid-rank>tbody>tr:nth-child(1) td{
+    color:#ff0000!important;
+}
+.grid-rank>tbody>tr:nth-child(1) .progress .progress-bar,
+.grid-rank>tbody>tr:nth-child(1)  .index{
+    background-color:#ff0000!important;
+}
+.grid-rank>tbody>tr:nth-child(2) td{
+    color:#ff9900!important;
+}
+.grid-rank>tbody>tr:nth-child(2) .progress .progress-bar,
+.grid-rank>tbody>tr:nth-child(2) .index{
+    background-color:#ff9900!important;
+}
+.grid-rank>tbody>tr:nth-child(3) td{
+    color:#f9e400!important;
+}
+.grid-rank>tbody>tr:nth-child(3) .progress .progress-bar,
+.grid-rank>tbody>tr:nth-child(3) .index{
+    background-color:#f9e400!important;
+}
+/*modal*/
+.modal{}
+.modal-dialog{
+    width: 46rem;
+    /*height: 34rem;*/
+    background: url("../img/modal-bg.png") no-repeat;
+    background-size: 100% 100%;
+    margin: 10% auto 0;
+    z-index: 2000;
+}
+.modal-content{
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+}
+.modal-header{
+    border: 0;
+    position: relative;
+}
+.modal-body{
+    padding: 1rem 5rem 4rem;
+}
+.modal-body-inner{
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 10px;
+}
+
+
