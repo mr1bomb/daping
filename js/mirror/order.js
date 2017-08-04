@@ -3,13 +3,88 @@ var order = {
         var w = order;
         var dom = $('#order');
         //dom.height($(window).height() * .28);
-        var box = dom.parent().parent().addClass('newanimated');
+        var box = dom.parent().parent().addClass('animated zoomIn');
         setTimeout(function() {
-            box.removeClass('newanimated');
+            box.removeClass('animated zoomIn');
             box = null;
         }, 1000);
         // var orders = echarts.init(document.getElementById('order'));
         $.get('http://172.16.100.65/mockjsdata/1/screen/bussiness_order?preview=' + preview).success(function(json) {
+            /*{
+             "data": {
+             "timesSuccess": [
+             0.8,
+             0.5,
+             0.7,
+             0.3,
+             1,
+             0,
+             0.1,
+             0.6,
+             0.2,
+             0.8,
+             0.9,
+             0.4
+             ],
+             "monthSuccess": [
+             0.4,
+             0.3,
+             1,
+             0,
+             0.2,
+             0.1,
+             0.6,
+             0.7,
+             0.8,
+             0.8,
+             0.5,
+             0.9
+             ],
+             "monthNum": [
+             120,
+             100,
+             50,
+             90,
+             180,
+             140,
+             160,
+             70,
+             80,
+             120,
+             30,
+             160
+             ],
+             "showTime": [
+             2017070501,
+             2017070502,
+             2017070503,
+             2017070504,
+             2017070505,
+             2017070506,
+             2017070507,
+             2017070508,
+             2017070509,
+             2017070510,
+             2017070511,
+             2017070512
+             ],
+             "timesNum": [
+             120,
+             70,
+             80,
+             180,
+             30,
+             120,
+             100,
+             50,
+             90,
+             140,
+             160
+             ]
+             },
+             "msg": "success",
+             "code": 0
+             }*/
             var timesSuccess = [];
             var monthNum = [];
             var monthSuccess = [];
@@ -203,7 +278,7 @@ var order = {
                 ]
             };
             w.ec.setOption(option);
-        }).error(function(json){
+        }).error(function(json) {
             var json = {
                 "data": {
                     "timesSuccess": [
@@ -472,7 +547,7 @@ var order = {
                 ]
             };
             w.ec.setOption(option);
-        });
+        })
     }
 }
 

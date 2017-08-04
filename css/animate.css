@@ -13,7 +13,7 @@
   animation-fill-mode: both;
 }
 
-.animated.infinite {
+.c.infinite {
   animation-iteration-count: infinite;
 }
 
@@ -1283,7 +1283,7 @@
 @keyframes zoomIn {
   from {
     opacity: 0;
-    transform: scale3d(.3, .3, .3);
+    transform: scale3d(.9, .9, .9);
   }
 
   50% {

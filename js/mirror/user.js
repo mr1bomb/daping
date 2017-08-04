@@ -18,12 +18,24 @@ var user = {
         //console.log(self);
         var dom = $('#user');
         //dom.height($(window).height() * .26);
-        var box = dom.parent().parent().addClass('newanimated');
+        var box = dom.parent().parent().addClass('animated zoomIn');
         setTimeout(function() {
-            box.removeClass('newanimated');
+            box.removeClass('animated zoomIn');
             box = null;
         }, 1000);
         $.get('http://172.16.100.65/mockjsdata/1/screen/user_activation?preview=' + preview).success(
+            /*{
+             "msg": "success",
+             "data": {
+             "fortySuccess": 0,
+             "thirtySuccess": 0.5,
+             "sixtySuccess": 0.4,
+             "twentySuccess": 0,
+             "tenSuccess": 0.5,
+             "fiftySuccess": 0
+             },
+             "code": 0
+             }*/
             function(json) {
                 var rs = [
                     [self.label['tenSuccess'], 0],
@@ -306,17 +318,17 @@ var user = {
                     }]
                 };
                 self.ec.setOption(option);
-            }).error(function(json){
-           var json =  {
+            }).error(function(json) {
+            var json = {
                 "msg": "success",
                 "data": {
-                "fortySuccess": 0,
+                    "fortySuccess": 0,
                     "thirtySuccess": 0.5,
                     "sixtySuccess": 0.4,
                     "twentySuccess": 0,
                     "tenSuccess": 0.5,
                     "fiftySuccess": 0
-            },
+                },
                 "code": 0
             };
             var rs = [
@@ -600,6 +612,6 @@ var user = {
                 }]
             };
             self.ec.setOption(option);
-        });
+        })
     }
 };

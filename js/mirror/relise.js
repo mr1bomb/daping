@@ -3,9 +3,9 @@ var relise = {
         var self = relise;
         var dom = $('#relise');
         //dom.height($(window).height() * .26);
-        var box = dom.parent().parent().addClass('newanimated');
+        var box = dom.parent().parent().addClass('animated zoomIn');
         setTimeout(function() {
-            box.removeClass('newanimated');
+            box.removeClass('animated zoomIn');
             box = null;
         }, 1000);
         $('#relise').height($(window).height() * .2);

@@ -69,3 +69,7 @@
         0 0 75px #162962; */
     }
 }
+.grid {
+    overflow: hidden;
+   /*height: 130px;*/
+}

@@ -23,10 +23,12 @@
 };*/
 
 var preview = 0;
-var innerEl = $('#info-total');
+/*var innerEl = $('#info-total');
 var rollEl = innerEl.parent();
 var waitEl = innerEl.clone(true).removeAttr('id');
 rollEl.append(waitEl);
+var tmp;
+var y = 0;*/
 $('#btn-preview').click(function() {
     if (preview == 0) {
         preview = 1;
@@ -39,34 +41,34 @@ $('#btn-preview').click(function() {
     }
 })
 $(document).ready(function() {
+    $('#info-total').height($('#info-total').height() - 18);
+    scroll.init(document.getElementById('info-total'));
 	order.get();
 	play.get();
 	user.get();
 	relise.get();
 	mess.get();
-    var y = 0;
-    d3.timer(function () {
+    /*d3.timer(function () {
         y = y - 0.1;
+        console.log(y);
         innerEl.css({
             top: y
         });
         waitEl.css({
             top: y + innerEl.height()
         });
-
         if (y * -1 > innerEl.height()) {
             y = 0;
-            var tmp = innerEl;
-
+            tmp = innerEl;
             innerEl = waitEl;
             waitEl = tmp;
         }
-    });
+    });*/
 	setInterval(user.get, 8000);
   setInterval(play.get, 8000);
   setInterval(relise.get, 10000);
   setInterval(order.get, 12000);
-  setInterval(mess.get, 6000);
+  setInterval(mess.get, 260000);
 	window.onresize = function() {
 		window.location.reload();
 		/*setTimeout(function() {

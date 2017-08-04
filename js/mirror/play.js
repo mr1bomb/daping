@@ -6,15 +6,27 @@ var play = {
         var self = play;
         var dom = $('#play');
         //dom.height($(window).height() * .28);
-        var box = dom.parent().parent().addClass('newanimated');
-        setTimeout(function() {
-            box.removeClass('newanimated');
+        var box = dom.parent().parent().addClass('animated zoomIn');
+       setTimeout(function() {
+            box.removeClass('animated zoomIn');
             box = null;
         }, 1000);
         $.ajax({
             type: 'get',
             url: 'http://172.16.100.65/mockjsdata/1/screen/bussiness_play?preview=' + preview,
             // url: '/screen/bussiness_play' + preview,
+            /*{
+             "code": 0,
+             "data": [
+             0.4,
+             0.1,
+             0.2,
+             0.8,
+             0.5,
+             0.3
+             ],
+             "msg": "success"
+             }*/
             data: {},
             //dataType: "json",
             contentType: "application/json",
@@ -112,7 +124,7 @@ var play = {
                             },
                             type: 'category',
                             data: [],
-                            name: '时间/分钟'
+                            name: ''
                         }
                     ],
                     series: [{
@@ -141,8 +153,8 @@ var play = {
                 };
                 if (data && data['code'] == 0 && data['data']) {
                     for (var i = 0; i < data.data.length; i++) {
-                        option.series[0].data[i] = Math.floor(data.data[i] * 100);
-                        option.yAxis[1].data[i] = Math.floor(data.data[i] * 100) + "% ";
+                        option.series[0].data[data.data.length-1-i] = Math.floor(data.data[i] * 100);
+                        option.yAxis[1].data[data.data.length-1-i] = Math.floor(data.data[i] * 100) + "% ";
                     }
                 }
                 self.ec.setOption(option, false);
@@ -250,7 +262,7 @@ var play = {
                             },
                             type: 'category',
                             data: [],
-                            name: '时间/分钟'
+                            name: ''
                         }
                     ],
                     series: [{
@@ -279,8 +291,8 @@ var play = {
                 };
                 if (data && data['code'] == 0 && data['data']) {
                     for (var i = 0; i < data.data.length; i++) {
-                        option.series[0].data[i] = Math.floor(data.data[i] * 100);
-                        option.yAxis[1].data[i] = Math.floor(data.data[i] * 100) + "% ";
+                        option.series[0].data[data.data.length-1-i] = Math.floor(data.data[i] * 100);
+                        option.yAxis[1].data[data.data.length-1-i] = Math.floor(data.data[i] * 100) + "% ";
                     }
                 }
                 self.ec.setOption(option, false);

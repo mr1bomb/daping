@@ -1,14 +1,110 @@
- var mess = {
+var scroll = {
+    init: function(gridwrap) {
+        var self = this;
+        if(self.setInterval) {
+            clearTimeout(self.setInterval);
+        } else {
+            self.isMove = true;
+            gridwrap.onmouseover = function() {
+                self.isMove = false;
+            }
+            gridwrap.onmouseout = function() {
+                self.isMove = true
+            }
+            self.scoll_fn = function() {
+                if(!self.isMove) {
+                    return;
+                }
+                if(gridwrap.scrollHeight <= gridwrap.scrollTop + gridwrap.offsetHeight) {
+                    gridwrap.scrollTop = 0;
+                } else {
+                    gridwrap.scrollTop += 1;
+                }
+            }
+        }
+        self.setInterval = setInterval(self.scoll_fn, 100);
+        
+    }
+};
+var mess = {
      get: function() {
          var w = mess;
-         $('#access-grid tbody').html('');
+
          $.get('http://172.16.100.65/mockjsdata/1/screen/bussiness_realtime?preview=' + preview).success(function(json) {
+             /*{
+              "code": 0,
+              "msg": "success",
+              "data": [
+              {
+              "id": 10788,
+              "catOutcome": "OK",
+              "updateTime": "2017-05-31 09:23:05",
+              "userCode": "120388271",
+              "subID": "02806612090000696",
+              "smartCardID": "825010304924626",
+              "startTime": "2017-05-31 09:23:05",
+              "registerTime": "2017-05-28 09:23:05",
+              "authStatus": "1"
+              },
+              {
+              "id": 18440,
+              "catOutcome": "FAIL",
+              "updateTime": "2017-05-31 09:23:05",
+              "userCode": "120388271",
+              "subID": "02806612090000696",
+              "smartCardID": "825010304924626",
+              "startTime": "2017-05-31 09:23:05",
+              "registerTime": "2017-05-28 09:23:05",
+              "authStatus": "0"
+              },
+              {
+              "id": 16274,
+              "catOutcome": "OK",
+              "updateTime": "2017-05-31 09:23:05",
+              "userCode": "120388271",
+              "subID": "02806612090000696",
+              "smartCardID": "825010304924626",
+              "startTime": "2017-05-31 09:23:05",
+              "registerTime": "2017-05-28 09:23:05",
+              "authStatus": "1"
+              },
+              {
+              "id": 19007,
+              "catOutcome": "OK",
+              "updateTime": "2017-05-31 09:23:05",
+              "userCode": "120388271",
+              "subID": "02806612090000696",
+              "smartCardID": "825010304924626",
+              "startTime": "2017-05-31 09:23:05",
+              "registerTime": "2017-05-28 09:23:05",
+              "authStatus": "1"
+              },
+              {
+              "id": 18160,
+              "catOutcome": "OK",
+              "updateTime": "2017-05-31 09:23:05",
+              "userCode": "120388271",
+              "subID": "02806612090000696",
+              "smartCardID": "825010304924626",
+              "startTime": "2017-05-31 09:23:05",
+              "registerTime": "2017-05-28 09:23:05",
+              "authStatus": "1"
+              },
+              {
+              "id": 17106,
+              "catOutcome": "OK",
+              "updateTime": "2017-05-31 09:23:05",
+              "userCode": "120388271",
+              "subID": "02806612090000696",
+              "smartCardID": "825010304924626",
+              "startTime": "2017-05-31 09:23:05",
+              "registerTime": "2017-05-28 09:23:05",
+              "authStatus": "1"
+              }
+              ]
+              }*/
              if (json.code == 0) {
                  var data = json.data;
-                 var list = $('#info-roll .gridList');
-                 if (list[1]) {
-                     list[1].remove();
-                 }
                  $('#info-total tbody').html('');
                  $.each(data, function(k, v) {
                      //console.log(v.startTime);
@@ -28,8 +124,9 @@
 
                  });
                  //_fun.scroll('info-total');
+                 /*y=0;
                  waitEl = innerEl.clone(true).removeAttr('id');
-                 rollEl.append(waitEl);
+                 rollEl.append(waitEl);*/
              }
          }).error(function(json){
              var json = {
@@ -106,10 +203,6 @@
              };
              if (json.code == 0) {
                  var data = json.data;
-                 var list = $('#info-roll .gridList');
-                 if (list[1]) {
-                     list[1].remove();
-                 }
                  $('#info-total tbody').html('');
                  $.each(data, function(k, v) {
                      //console.log(v.startTime);
@@ -129,8 +222,9 @@
 
                  });
                  //_fun.scroll('info-total');
-                 waitEl = innerEl.clone(true).removeAttr('id');
-                 rollEl.append(waitEl);
+                 /*y=0;
+                  waitEl = innerEl.clone(true).removeAttr('id');
+                  rollEl.append(waitEl);*/
              }
          })
      }
